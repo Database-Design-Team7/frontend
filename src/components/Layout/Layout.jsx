@@ -10,6 +10,7 @@ function Layout({ children }) {
       <Header isLoggedIn={isLoggedIn} />
       <main className="main-content">
         {children}
+        asdasd
       </main>
     </div>
   )
