@@ -14,13 +14,13 @@ const ROOM_DETAILS_MOCK = {
       roomNo: '301호',
       desc: '조용한 소형 회의실입니다. 화이트보드 구비.',
       equipment: '모니터, 화이트보드',
-      image: '/images/room1.jpg'
+      image: '/images/room301.jpg'
     },
     {
       roomNo: '302호',
       desc: '창가 쪽 소형 룸입니다. 채광이 좋습니다.',
       equipment: '개별 에어컨, 콘센트 다수',
-      image: '/images/room2.jpg'
+      image: '/images/room302.jpg'
     },
   ],
   medium: [
@@ -28,7 +28,7 @@ const ROOM_DETAILS_MOCK = {
       roomNo: '401호',
       desc: '중형 프로젝트 룸입니다.',
       equipment: '대형 TV, 8인 테이블',
-      image: '/images/room3.jpg'
+      image: '/images/room401.jpg'
     },
   ],
   large: [
@@ -36,7 +36,7 @@ const ROOM_DETAILS_MOCK = {
       roomNo: '501호',
       desc: '대형 세미나실입니다.',
       equipment: '빔프로젝터, 마이크, 강연대',
-      image: '/images/room4.jpg'
+      image: '/images/room501.jpg'
     },
   ]
 };
