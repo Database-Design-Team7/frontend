@@ -37,14 +37,30 @@ function Login() {
 
   const handleSignIn = async () => {
     try {
-      // 로그인 로직 구현 예정
-      console.log('로그인:', formData)
-      setError('')
-      // 로그인 성공 시 마이페이지로 이동
-      // navigate('/mypage')
+      // 보여주기용 로그인 로직
+      const { userName, mail } = formData
+
+      // 관리자 계정 확인 (username: admin, email: 1234)
+      if (userName === 'admin' && mail === '1234') {
+        console.log('관리자 로그인:', formData)
+        setError('')
+        navigate('/admin')
+        return
+      }
+
+      // 일반 사용자 로그인
+      if (userName && mail) {
+        console.log('일반 사용자 로그인:', formData)
+        setError('')
+        navigate('/')
+        return
+      }
+
+      // 입력값이 없을 경우
+      setError('이름과 이메일을 입력해주세요.')
     } catch (error) {
       console.error('로그인 오류:', error)
-      setError(error.message || '이름 또는 이메일이 일치하지 않습니다.')
+      setError(error.message || '로그인 중 오류가 발생했습니다.')
     }
   }
 
