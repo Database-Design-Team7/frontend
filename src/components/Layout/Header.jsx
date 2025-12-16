@@ -21,9 +21,9 @@ function Header({ isLoggedIn }) {
           <span className="nav-divider">|</span>
           <Link to="/contact" className="nav-link">문의하기</Link>
           <span className="nav-divider">|</span>
-          <Link to={isLoggedIn ? "/mypage" : "/login"} className="nav-link">
-            {isLoggedIn ? '마이페이지' : '로그인'}
-          </Link>
+          <Link to="/mypage" className="nav-link">마이페이지</Link>
+          <span className="nav-divider">|</span>
+          <Link to="/login" className="nav-link">로그인</Link>
         </nav>
       </div>
     </header>

@@ -58,7 +58,7 @@ function Home() {
   ]
 
   const handleSearch = () => {
-    // 검색 조건 확인 (고정값: 한성대입구역, 12월 19일, 중형)
+    // 검색 조건 확인 (고정값: 한성대입구역, 2024-12-19, 중형)
     const isMatch = 
       selectedBranch === 'hansung' && 
       selectedDate === '2024-12-19' && 
@@ -99,17 +99,13 @@ function Home() {
                   <option value="hansung">한성대입구역</option>
                 </select>
                 
-                <select 
-                  className="search-dropdown"
+                <input
+                  type="date"
+                  className="search-dropdown date-input"
                   value={selectedDate}
                   onChange={(e) => setSelectedDate(e.target.value)}
-                >
-                  <option value="">날짜</option>
-                  <option value="today">오늘</option>
-                  <option value="tomorrow">내일</option>
-                  <option value="this-week">이번 주</option>
-                  <option value="2024-12-19">12월 19일</option>
-                </select>
+                  placeholder="날짜 선택"
+                />
                 
                 <select 
                   className="search-dropdown"

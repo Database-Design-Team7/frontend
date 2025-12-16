@@ -1,5 +1,7 @@
 .mypage-page {
-  padding: 2rem;
+  padding: 40px 20px;
+  min-height: calc(100vh - 80px);
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
 .page-container {
@@ -9,14 +11,331 @@
 
 .page-title {
   font-size: 2.5rem;
-  margin-bottom: 2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
   text-align: center;
+  color: #333;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.mypage-content {
-  padding: 2rem;
+/* 섹션 스타일 */
+.mypage-section {
+  margin-bottom: 30px;
+}
+
+.section-header {
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 3px solid #667eea;
+  padding-bottom: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* 기본 정보 카드 */
+.info-card {
   background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.info-item:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #666;
+}
+
+.info-value {
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+}
+
+.info-value.penalty-high {
+  color: #e74c3c;
+  font-weight: 700;
+}
+
+/* 패널티 내역 */
+.history-card {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #f8f9fa;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #e74c3c;
+}
+
+.history-date {
+  font-size: 14px;
+  color: #666;
+  min-width: 100px;
+}
+
+.history-reason {
+  font-size: 16px;
+  color: #333;
+  flex: 1;
+  margin: 0 20px;
+}
+
+.history-points {
+  font-size: 18px;
+  font-weight: 700;
+  color: #e74c3c;
+}
+
+/* 결제 수단 */
+.payment-card {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.payment-item {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.payment-item:hover {
+  border-color: #667eea;
+  transform: translateX(5px);
+}
+
+.payment-icon {
+  font-size: 32px;
+  margin-right: 20px;
+}
+
+.payment-info {
+  flex: 1;
+}
+
+.payment-type {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.payment-details {
+  font-size: 14px;
+  color: #666;
+}
+
+/* 소모임 */
+.groups-card {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 8px;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.group-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+}
+
+.group-name {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.group-details {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.group-role {
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.group-role.role-leader {
+  background: rgba(255, 215, 0, 0.3);
+  color: #ffd700;
+}
+
+.group-branch {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* 예약 내역 */
+.reservations-card {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.reservation-item {
+  padding: 25px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+  transition: all 0.3s ease;
+}
+
+.reservation-item:hover {
+  background: #e9ecef;
+  transform: translateX(5px);
+}
+
+.reservation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.reservation-facility {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.reservation-status {
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.reservation-status.status-active {
+  background: #d4edda;
+  color: #155724;
+}
+
+.reservation-status.status-completed {
+  background: #d1ecf1;
+  color: #0c5460;
+}
+
+.reservation-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.reservation-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.detail-label {
+  font-size: 12px;
+  color: #666;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.detail-value {
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+}
+
+.empty-message {
+  text-align: center;
+  color: #999;
+  padding: 40px;
+  font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .mypage-page {
+    padding: 20px 10px;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .info-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .history-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .group-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .reservation-details {
+    grid-template-columns: 1fr;
+  }
 }
 
