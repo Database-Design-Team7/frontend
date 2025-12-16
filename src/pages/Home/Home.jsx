@@ -58,10 +58,10 @@ function Home() {
   ]
 
   const handleSearch = () => {
-    // 검색 조건 확인 (고정값: 한성대입구역, 2024-12-19, 중형)
+    // 검색 조건 확인 (고정값: 한성대입구역, 2025-12-19, 중형)
     const isMatch = 
       selectedBranch === 'hansung' && 
-      selectedDate === '2024-12-19' && 
+      (selectedDate === '2025-12-19' || selectedDate === '2024-12-19') && 
       selectedSize === 'medium'
 
     if (isMatch) {

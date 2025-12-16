@@ -3,7 +3,7 @@ import './MyPage.css'
 function MyPage() {
   // 더미데이터
   const userData = {
-    name: '홍길동',
+    name: '이학현',
     email: 'hong@example.com',
     penalty: 2,
     penaltyHistory: [
@@ -23,7 +23,7 @@ function MyPage() {
         id: 1, 
         facility: '회의실 A', 
         branch: '강남점', 
-        date: '2024-12-20', 
+        date: '2024-12-19',
         time: '14:00 - 16:00',
         status: '예약완료',
         capacity: 8
