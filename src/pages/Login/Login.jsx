@@ -37,10 +37,18 @@ function Login() {
 
   const handleSignIn = async () => {
     try {
-      // 보여주기용 로그인 로직
       const { userName, mail } = formData
 
-      // 관리자 계정 확인 (username: admin, email: 1234)
+      // 관리자 계정 확인 (한성대점 / 0000)
+      if (userName === '한성대점' && mail === '0000') {
+        console.log('관리자 로그인:', formData)
+        setError('')
+        // Context에 로그인 정보 저장 (필요시)
+        navigate('/admin')
+        return
+      }
+
+      // 기존 관리자 계정 (admin / 1234) - 호환성 유지
       if (userName === 'admin' && mail === '1234') {
         console.log('관리자 로그인:', formData)
         setError('')

@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { AppProvider } from './context/AppContext'
 import Layout from './components/Layout/Layout'
 import Home from './pages/Home/Home'
 import Location from './pages/Location/Location'
@@ -12,20 +13,22 @@ import './App.css'
 
 function App() {
   return (
-    <BrowserRouter>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/location" element={<Location />} />
-          <Route path="/reservation" element={<Reservation />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/mypage" element={<MyPage />} />
-          <Route path="/admin" element={<Admin />} />
-        </Routes>
-      </Layout>
-    </BrowserRouter>
+    <AppProvider>
+      <BrowserRouter>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/location" element={<Location />} />
+            <Route path="/reservation" element={<Reservation />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/mypage" element={<MyPage />} />
+            <Route path="/admin" element={<Admin />} />
+          </Routes>
+        </Layout>
+      </BrowserRouter>
+    </AppProvider>
   )
 }
 

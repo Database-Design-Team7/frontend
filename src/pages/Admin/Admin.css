@@ -24,7 +24,11 @@
 }
 
 .admin-section {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  background: #fafafa;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
 }
 
 .admin-section-title {
@@ -33,5 +37,185 @@
   color: #333;
   border-bottom: 2px solid #667eea;
   padding-bottom: 0.5rem;
+}
+
+/* 폼 스타일 */
+.admin-form {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  border: 1px solid #e0e0e0;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.admin-select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  background: white;
+}
+
+/* 버튼 스타일 */
+.admin-button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.admin-button.primary {
+  background: #667eea;
+  color: white;
+}
+
+.admin-button.primary:hover {
+  background: #5568d3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+}
+
+.admin-button.secondary {
+  background: #48bb78;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.admin-button.secondary:hover {
+  background: #38a169;
+}
+
+.admin-button.disabled {
+  background: #cbd5e0;
+  color: #718096;
+  cursor: not-allowed;
+}
+
+/* 지점 정보 */
+.branch-info {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.branch-info p {
+  margin: 0.5rem 0;
+  color: #555;
+}
+
+/* 시설 목록 */
+.facility-list {
+  margin-top: 1rem;
+}
+
+.facility-item {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 0.5rem;
+}
+
+.facility-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.facility-header h3 {
+  margin: 0;
+  color: #333;
+}
+
+.facility-header span {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* 장비 목록 */
+.equipment-list {
+  margin-top: 1rem;
+}
+
+.equipment-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 0.5rem;
+}
+
+.equipment-item span {
+  color: #333;
+  font-weight: 500;
+}
+
+.equipment-item strong {
+  color: #333;
+  font-weight: 600;
+}
+
+/* 이벤트 목록 */
+.event-list {
+  margin-top: 1rem;
+}
+
+.event-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 0.5rem;
+}
+
+.event-item strong {
+  color: #333;
+}
+
+.event-item span {
+  color: #666;
+  font-size: 0.9rem;
 }
 
