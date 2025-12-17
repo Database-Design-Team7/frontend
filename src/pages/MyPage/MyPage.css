@@ -174,6 +174,188 @@
   gap: 15px;
 }
 
+/* 소모임 검색바를 위해 섹션 헤더 */
+.group-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 20px; 
+}
+
+/* 소모임 검색 박스 스타일 */
+.group-search-box {
+    display: flex;
+    gap: 10px;
+}
+
+.group-search-box .search-input {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 250px; 
+}
+
+.group-search-box .search-button {
+    padding: 8px 15px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.group-search-box .search-button:hover {
+    background: #5a66cc;
+}
+
+/* 소모임 리더 버튼 스타일 */
+.leader-actions {
+    display: flex;
+    gap: 10px;
+    margin-left: 20px;
+}
+
+.leader-actions .action-button {
+    padding: 8px 15px;
+    background: #ffc107; 
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.leader-actions .action-button:hover {
+    background: #e0a800;
+}
+
+/* 모달 (팝업) 기본 스타일 */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    color: #333;
+}
+
+.modal-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 10px;
+    color: #333;
+}
+
+.modal-close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* 지원자 목록 스타일 */
+.applicant-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    background: #fcfcfc;
+}
+
+.applicant-actions button {
+    margin-left: 10px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.applicant-actions .allow-button {
+    background: #28a745;
+    color: white;
+}
+
+.applicant-actions .reject-button {
+    background: #dc3545;
+    color: white;
+}
+
+.applicant-info p {
+    color: #333; 
+    margin: 5px 0;
+}
+
+/* 멤버 관리 목록 스타일 */
+.member-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    color: #333;
+}
+
+.member-email {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.role-dropdown {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.modal-actions .save-button {
+    padding: 10px 20px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* 빈 메시지 텍스트 색상 보장 */
+.modal-content .empty-message {
+    color: #666;
+    text-align: center;
+    padding: 20px 0;
+}
+
 .group-item {
   display: flex;
   justify-content: space-between;
@@ -337,5 +519,26 @@
   .reservation-details {
     grid-template-columns: 1fr;
   }
+
+  .group-section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .group-search-box {
+        width: 100%;
+    }
+    .group-search-box .search-input {
+        flex-grow: 1;
+    }
+    .leader-actions {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    
+    .applicant-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
 }
 

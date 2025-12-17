@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Location.css';
 
-// DUMMY_LOCATIONS 데이터는 이전과 동일합니다.
 const DUMMY_LOCATIONS = [
-  // ... (이전의 한성대입구점, 성신여대입구점 데이터 그대로 사용)
   {
     id: 1,
     name: '한성대입구점',
@@ -27,14 +25,11 @@ const DUMMY_LOCATIONS = [
     imageFacility: '/images/facility_sungshin.jpg',
     imageBuilding: '/images/building_sungshin.png',
     imageMap: '/images/map_sungshin.png',
-    canReserve: true,
+    canReserve: false,
   },
 ];
 
-
-// =======================================================
-// 1. 개별 지점 결과를 표시하는 컴포넌트 (UI 전면 수정)
-// =======================================================
+// 개별 지점 결과를 표시하는 컴포넌트 
 function LocationResultItem({ location }) {
   const navigate = useNavigate();
 
@@ -58,7 +53,7 @@ function LocationResultItem({ location }) {
   return (
     <div className="location-item large-layout">
       
-      {/* 1. 좌측: 시설/건물 이미지 (클릭 이벤트 삭제) */}
+      {/* 좌측: 시설/건물 이미지 */}
       <div className="item-left-area">
         <div className="large-image-group">
             <img src={location.imageFacility} alt={`${location.name} 시설 사진`} className="facility-image" />
@@ -66,19 +61,19 @@ function LocationResultItem({ location }) {
         </div>
       </div>
 
-      {/* 2. 우측: 상세 정보, 지도, 예약 버튼 영역 (구조 변경) */}
+      {/* 우측: 상세 정보, 지도, 예약 버튼 영역 */}
       <div className="item-right-area">
 
-        {/* 2-1. 점포 이름 */}
+        {/* 점포 이름 */}
         <h3 className="location-name">{location.name}</h3>
 
-        {/* 2-2. 지도 이미지 영역 (이름 바로 밑) */}
+        {/* 지도 이미지 영역 */}
         <div className="map-area">
             <img src={location.imageMap} alt={`${location.name} 지도 이미지`} className="map-image" />
             <p className="map-caption">지도 위치</p>
         </div>
 
-        {/* 2-3. 상세 텍스트 정보 */}
+        {/* 상세 텍스트 정보 */}
         <div className="compact-text-info bottom">
             <h4 className="info-title">지점 상세 정보</h4>
             {compactInfo.map((info, index) => (
@@ -86,7 +81,7 @@ function LocationResultItem({ location }) {
             ))}
         </div>
         
-        {/* 2-4. 예약 버튼 (가장 아래) */}
+        {/* 예약 버튼 */}
         <button 
             className={`reservation-button ${location.canReserve ? '' : 'disabled'}`} 
             onClick={handleReservation}
@@ -100,10 +95,7 @@ function LocationResultItem({ location }) {
   );
 }
 
-
-// =======================================================
-// 2. 메인 Location 컴포넌트 (검색 기능) - 이전과 동일
-// =======================================================
+// 2. 메인 Location 컴포넌트 (검색 기능)
 function Location() {
   const [searchResults, setSearchResults] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
