@@ -102,7 +102,7 @@ function MyPage() {
         id: 1, 
         facility: '회의실 A', 
         branch: '강남점', 
-        date: '2024-12-20', 
+        date: '2024-12-19',
         time: '14:00 - 16:00',
         status: '예약완료',
         capacity: 8

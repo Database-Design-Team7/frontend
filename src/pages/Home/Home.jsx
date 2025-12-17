@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import './Home.css'
 
 function Home() {
@@ -8,71 +8,70 @@ function Home() {
   const [showResults, setShowResults] = useState(false)
   const resultsRef = useRef(null)
 
-  // 더미데이터 - 한성대입구역, 12월 19일, 중형 조건에 맞는 시설들
+  // 더미데이터 - 중형 시설들 (201호~204호)
   const facilities = [
     {
       id: 1,
-      title: 'Office Space',
-      description: 'Make a home for yourself and your team with a private office. Fully-serviced and flexible, with everything included.',
-      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80',
+      title: '201호',
+      description: '넓고 쾌적한 사무 공간으로 팀 회의와 업무에 최적화된 환경을 제공합니다. 최신 시설과 편의 장비가 완비되어 있습니다.',
+      image: 'https://images.unsplash.com/photo-1497215842964-222b430dc094?w=800&h=600&fit=crop&q=80',
       branch: '한성대입구역',
       date: '12월 19일',
       size: '중형'
     },
     {
       id: 2,
-      title: 'Coworking Membership',
-      description: 'Enjoy coworking space access at over 3,000 inspiring and creative locations worldwide, all with a flexible contract.',
-      image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&q=80',
+      title: '202호',
+      description: '모던한 인테리어의 사무실로 창의적인 업무 환경을 제공합니다. 자연 채광과 조용한 분위기로 집중력을 높일 수 있습니다.',
+      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop&q=80',
       branch: '한성대입구역',
       date: '12월 19일',
       size: '중형'
     },
     {
       id: 3,
-      title: 'Dedicated Desk',
-      description: 'Enjoy your own private desk in a beautifully designed shared workspace.',
-      image: 'https://images.unsplash.com/photo-1497215842964-222b430dc094?w=600&q=80',
+      title: '203호',
+      description: '프리미엄 사무 공간으로 비즈니스 미팅과 프레젠테이션에 적합합니다. 대형 화면과 음향 시설이 완비되어 있습니다.',
+      image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&h=600&fit=crop&q=80',
       branch: '한성대입구역',
       date: '12월 19일',
       size: '중형'
     },
     {
       id: 4,
-      title: 'Virtual Office',
-      description: 'Establish a presence for your business at any of our locations around the world.',
-      image: 'https://images.unsplash.com/photo-1497366754035-2001989cee19?w=600&q=80',
-      branch: '한성대입구역',
-      date: '12월 19일',
-      size: '중형'
-    },
-    {
-      id: 5,
-      title: 'Meeting rooms',
-      description: 'Book meeting rooms on-demand, with all the support and services that you need.',
-      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80',
+      title: '204호',
+      description: '컴포트한 업무 환경을 제공하는 사무실입니다. 개인 작업과 소규모 팀 협업 모두에 최적화된 공간입니다.',
+      image: 'https://images.unsplash.com/photo-1497215842964-222b430dc094?w=800&h=600&fit=crop&q=80',
       branch: '한성대입구역',
       date: '12월 19일',
       size: '중형'
     }
   ]
 
-  const handleSearch = () => {
-    // 검색 조건 확인 (고정값: 한성대입구역, 2024-12-19, 중형)
-    const isMatch = 
-      selectedBranch === 'hansung' && 
-      selectedDate === '2024-12-19' && 
-      selectedSize === 'medium'
-
-    if (isMatch) {
-      setShowResults(true)
-      // 검색 결과 섹션으로 스크롤
-      setTimeout(() => {
-        resultsRef.current?.scrollIntoView({ behavior: 'smooth' })
+  // showResults가 true가 되면 스크롤
+  useEffect(() => {
+    if (showResults && resultsRef.current) {
+      // DOM이 완전히 렌더링된 후 스크롤
+      const timer = setTimeout(() => {
+        resultsRef.current?.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        })
       }, 100)
-    } else {
-      setShowResults(false)
+      return () => clearTimeout(timer)
     }
+  }, [showResults])
+
+  const handleSearch = () => {
+    // 모든 검색 조건이 선택되었는지 확인
+    if (!selectedBranch || !selectedDate || !selectedSize) {
+      alert('모든 검색 조건을 선택해주세요.')
+      setShowResults(false)
+      return
+    }
+
+    // 모든 조건이 선택되면 결과 표시
+    setShowResults(true)
   }
 
   return (
